@@ -14,6 +14,7 @@
 A quick way to do this is to type **Command+Shift+P** on Mac or **Ctrl+Shift+P** on Windows or Linux and type **"open launch.json"**
 
 *Note: You may be able to use the "Debug (Launch)" but I wasn't able to get it to work. Maybe the future version of Java Debugger for VS Code fixes this issue.*
+
 3. Add the following tasks to your **"tasks.json"**:
 ```json
 "tasks": [
@@ -45,6 +46,15 @@ A quick way to do this is to type **Command+Shift+P** on Mac or **Ctrl+Shift+P**
 ```
 A quick way to do this is to type **Command+Shift+P** on Mac or **Ctrl+Shift+P** on Windows or Linux and type **"configure task"** to create the tasks.json file.
 
+4. (Optional) Add "spring-boot-devtools" to your pom.xml file
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+    <optional>true</optional>
+</dependency>
+```
+spring-boot-devtools module provides some nice features during development such as automatic restart.
 ## How to debug
 1. Run the **"debug"** task by hitting **"Command+Shift+B"** on Mac or **"Ctrl+Shift+B"** on Windows or Linux and select **"Debug->Continue without scanning the task output"**.
 2. As soon as you see "Listening for transport dt_socket at address: 8000", go to the Debug view in VS Code (Command+Shift+D/Ctrl+Shift+D) and hit play for **"Debug (Attach)"**.
